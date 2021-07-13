@@ -254,7 +254,7 @@ class HardNegativeTripletMiner( TripletMiner ):
         max_anc_neg_dist, _ = pairwise_dist.max( axis = 1, keepdim = True )
         anc_neg_dist        = pairwise_dist + \
                               max_anc_neg_dist * ( 1. - mask_anc_neg.float( ) )
-        anc_neg_dist        = anc_neg_dist.min( axis = 1, keepdim = False )
+        anc_neg_dist        = anc_neg_dist.min( axis = 1, keepdim = False )[0]
         return anc_neg_dist
 
     def forward(
