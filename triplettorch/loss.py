@@ -286,5 +286,5 @@ class HardNegativeTripletMiner( TripletMiner ):
         neg_dist      = self._neg_dist( ids, pairwise_dist )
 
         loss          = torch.clamp( pos_dist - neg_dist + self.margin, min = 0. )
-        loss          = loss.mean( )
+        #loss          = loss.mean( )
         return loss, None
