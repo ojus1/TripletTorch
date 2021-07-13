@@ -174,7 +174,8 @@ class AllTripletMiner( TripletMiner ):
         n_val_tri     = torch.sum( mask )
         f_pos_tri     = n_pos_tri / ( n_val_tri + 1e-16 )
 
-        loss          = torch.sum( loss ) / ( n_pos_tri + 1e-16 )
+        #loss          = torch.sum( loss ) / ( n_pos_tri + 1e-16 )
+        loss          = loss / ( n_pos_tri + 1e-16 )
 
         return loss, f_pos_tri
 
